@@ -3,10 +3,11 @@
 
 import React, { useEffect, useState } from 'react';
 // CORRECCIÓN: Se eliminó 'Award' que no se usaba.
-import { Users, Clock, TrendingUp, Mail, Calendar } from 'lucide-react';
-// CORRECCIÓN: Se cambiaron los alias a rutas relativas.
-import { supabase } from '../../lib/supabase';
-import { User, StudentProgress } from '../../types';
+// CORRECCIÓN: Se eliminan 'Clock' y 'TrendingUp' que no se usaban y causaban error de build.
+import { Users, Mail, Calendar } from 'lucide-react';
+// CORRECCIÓN: Se restauran los alias de importación en lugar de rutas relativas.
+import { supabase } from '@/lib/supabase';
+import { User, StudentProgress } from '@/types';
 import toast from 'react-hot-toast';
 
 interface StudentWithProgress extends User {
