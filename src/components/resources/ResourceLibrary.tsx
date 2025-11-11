@@ -2,7 +2,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { ChevronDown, Layers, MapPin, BookSearch, ShieldHalf, Network, RadioTower } from 'lucide-react';
+import { ChevronDown, Layers, MapPin, BookOpen, ShieldHalf, Network, RadioTower } from 'lucide-react';
 
 export const ResourceLibrary: React.FC = () => {
   const [expandedModule, setExpandedModule] = useState<string | null>(null);
@@ -56,7 +56,7 @@ export const ResourceLibrary: React.FC = () => {
     },
     {
       id: 'dns-basico',
-      icon: BookSearch,
+      icon: BookOpen,
       title: 'Fundamentos: DNS',
       content: (
         <>
