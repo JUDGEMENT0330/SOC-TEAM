@@ -46,7 +46,7 @@ export const TerminalContainer: React.FC = () => {
         foreground: '#f8fafc',
         cursor: '#b8860b',
         cursorAccent: '#b8860b',
-        selection: 'rgba(184, 134, 11, 0.3)',
+        selectionBackground: 'rgba(184, 134, 11, 0.3)',
         black: '#0a0f1c',
         red: '#ef4444',
         green: '#10b981',
