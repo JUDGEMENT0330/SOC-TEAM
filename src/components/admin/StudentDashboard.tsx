@@ -2,9 +2,11 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Users, Award, Clock, TrendingUp, Mail, Calendar } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
-import { User, StudentProgress } from '@/types';
+// CORRECCIÓN: Se eliminó 'Award' que no se usaba.
+import { Users, Clock, TrendingUp, Mail, Calendar } from 'lucide-react';
+// CORRECCIÓN: Se cambiaron los alias a rutas relativas.
+import { supabase } from '../../lib/supabase';
+import { User, StudentProgress } from '../../types';
 import toast from 'react-hot-toast';
 
 interface StudentWithProgress extends User {
