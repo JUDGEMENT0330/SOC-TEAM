@@ -3,8 +3,9 @@
 
 import React, { useState, useCallback } from 'react';
 import { Upload, FileText, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
-import { supabase } from '@/lib/supabase';
-import { parsePDFScenario } from '@/lib/pdfParser';
+// CORRECCIÓN: Se cambiaron los alias a rutas relativas para resolver el error de compilación.
+import { supabase } from '../../lib/supabase';
+import { parsePDFScenario } from '../../lib/pdfParser';
 import { Scenario } from '@/types';
 import toast from 'react-hot-toast';
 
@@ -107,9 +108,12 @@ export const ScenarioUploader: React.FC = () => {
     // Extract objectives (lines starting with numbers or bullets)
     const objectives = content
       .split('\n')
-      .filter((line) => /^\d+\.|^-|^•/.test(line.trim()))
-      .map((line) => line.replace(/^\d+\.|^-|^•/, '').trim())
-      .filter((line) => line.length > 10)
+      // CORRECCIÓN: Se añadió (line: string) para evitar el error de 'any' implícito.
+      .filter((line: string) => /^\d+\.|^-|^•/.test(line.trim()))
+      // CORRECCIÓN: Se añadió (line: string)
+      .map((line: string) => line.replace(/^\d+\.|^-|^•/, '').trim())
+      // CORRECCIÓN: Se añadió (line: string)
+      .filter((line: string) => line.length > 10)
       .slice(0, 5);
 
     return {
